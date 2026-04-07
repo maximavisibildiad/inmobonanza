@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobonanza - Para Propietarios de Lujo</title>
+    
+    <!-- Google Tag Manager (Head) -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-338606133'); // GA4 ID de Inmobonanza
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-338606133"></script>
+    
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '256459520041913'); // Pixel ID de Inmobonanza
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=256459520041913&ev=PageView&noscript=1" /></noscript>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            font-size: 28px;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #000;
+        }
+        
+        .hero-sub {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        .pain-points {
+            background: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .pain-card {
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .pain-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .pain-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            color: white;
+            padding: 80px 0;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .solution h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .solution p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #e0e0e0;
+        }
+        
+        .benefits {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .benefit-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .numbers {
+            background: #f5f5f5;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .number-item h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        
+        .number-item p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .testimonial-card {
+            background: #f5f5f5;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #000;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .faq {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+        
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .faq-item p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .cta-section {
+            background: #000;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+        }
+        
+        .cta-button-white {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button-white:hover {
+            background: #e0e0e0;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .pain-grid,
+            .benefits-grid,
+            .numbers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button Flotante -->
+    <a href="https://wa.me/573192199629?text=Hola%20Inmobonanza,%20quiero%20saber%20m%C3%A1s%20sobre%20como%20alquilar%20mi%20propiedad" class="whatsapp-button" id="whatsappBtn" onclick="trackWhatsAppClick()" title="Contactar por WhatsApp">
+        💬
+    </a>
+    
+    <header>
+        <div class="container">
+            <h1>INMOBONANZA</h1>
+            <p class="tagline">Para propietarios que merecen algo mejor</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="hero" id="hero-section">
+            <h2>Deja de gestionar.<br>Empieza a ganar.</h2>
+            <p class="hero-sub">Tu apartamento o casa genera ingresos predecibles. Nosotros nos encargamos de todo. Inquilinos de alto perfil, cero molestias, rentabilidad garantizada.</p>
+            <button class="cta-button" id="hero-cta" onclick="handleCTAClick('hero')">Quiero saber más</button>
+        </section>
+        
+        <section class="pain-points" id="pain-section">
+            <h2 class="section-title">¿Te suena familiar?</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>Airbnb es agotador</h3>
+                    <p>100 huéspedes al año significa 100 limpiezas, 100 reclamos, 100 transacciones. Tu apartamento se desgasta. Y tú también.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Los inquilinos son impredecibles</h3>
+                    <p>¿Quién verifica de verdad a los arrendatarios? ¿Quién responde a las 11pm cuando hay un problema? Tú, siempre.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>El tiempo vale oro</h3>
+                    <p>Administrar un inmueble es un trabajo. Pero no es TU trabajo. Hay cosas más importantes que hacer con tu vida.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>La rentabilidad no es segura</h3>
+                    <p>Algunas semanas ganas mucho. Otras, casi nada. No hay predecibilidad. No hay paz mental.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="solution">
+            <div class="container">
+                <h2>Aquí es donde nosotros entramos</h2>
+                <p>Colocamos inquilinos de VERDADERO ALTO PERFIL — ejecutivos, deportistas, empresarios — que QUIEREN una cosa: un lugar excelente donde vivir sin complicaciones. Y pagan por eso.</p>
+                <p style="color: #fff; font-weight: 600;">Tu trabajo: entregar la propiedad amoblada. El resto, es nuestro.</p>
+            </div>
+        </section>
+        
+        <section class="benefits" id="benefits-section">
+            <h2 class="section-title">Lo que cambia</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Rentabilidad predecible</h3>
+                    <p>Ingresos fijos mes a mes. Sin sorpresas. Sin vacíos. Sin dependencia de temporada.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">😌</div>
+                    <h3>Cero gestión</h3>
+                    <p>Nosotros administramos todo: documentos, cobros, mantenimiento, reparaciones, inventario.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Inquilinos verificados</h3>
+                    <p>No aceptamos cualquiera. Solo personas de verdadero alto perfil que cuidan lo que alquilan.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="numbers">
+            <h2 class="section-title">Por los números</h2>
+            <div class="numbers-grid">
+                <div class="number-item">
+                    <h3>4.5M+</h3>
+                    <p>Ingreso mensual base (tu precio, sin cambios)</p>
+                </div>
+                <div class="number-item">
+                    <h3>12 meses</h3>
+                    <p>Contrato de renta mensual renovable</p>
+                </div>
+                <div class="number-item">
+                    <h3>0 horas</h3>
+                    <p>Tiempo que inviertes en administración</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonial" id="testimonial-section">
+            <h2 class="section-title">Un caso real</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Estaba rentando en Airbnb. Era dinero, pero también era un trabajo de tiempo completo. Un mes después con Inmobonanza, mi apartamento genera lo mismo pero yo duermo tranquilo. El inquilino es excelente, todo está controlado. Realmente, cambió mi vida."</p>
+                <p class="testimonial-author">Propietario de apartamento amoblado, zona de lujo — Cali</p>
+            </div>
+        </section>
+        
+        <section class="faq" id="faq-section">
+            <h2 class="section-title">Preguntas que probablemente tienes</h2>
+            <div class="faq-item">
+                <h4>¿Qué pasa si el inquilino no paga?</h4>
+                <p>Nosotros verificamos seriamente a nuestros inquilinos. Si hay un problema, nosotros gestionamos todo legalmente. Tú no entras en eso.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Y si el inquilino daña el apartamento?</h4>
+                <p>Tu inmueble está asegurado. Nosotros hacemos inspección inicial y final. Cualquier daño se documenta y se cobra.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Puedo aumentar la renta después?</h4>
+                <p>Sí, pero solo después de renegociar. Nunca cambiamos el acuerdo sin avisar. Tú tienes control total.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Cuál es el proceso?</h4>
+                <p>Simple: 1) Nos entregas la propiedad amoblada, 2) Nosotros conseguimos el inquilino, 3) Recibes ingresos cada mes. Listo.</p>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="container">
+                <h2>¿Listo para dejar de trabajar por tu dinero?</h2>
+                <p>Hablemos. Sin compromiso. Sin presión.</p>
+                <button class="cta-button-white" id="final-cta" onclick="handleCTAClick('final')">Agendar conversación</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Inmobonanza. Propiedades de lujo, rentabilidad predecible.</p>
+    </footer>
+    
+    <script>
+        // Tracking de eventos con Google Analytics y Meta Pixel
+        
+        function handleCTAClick(location) {
+            // Enviar evento a Google Analytics
+            gtag('event', 'click_cta', {
+                'cta_location': location,
+                'page_title': document.title
+            });
+            
+            // Enviar evento a Meta Pixel
+            fbq('track', 'Lead', {
+                'content_name': 'CTA Click - ' + location,
+                'content_category': 'Propietarios'
+            });
+            
+            // Abrir WhatsApp
+            window.open('https://wa.me/573192199629?text=Hola%20Inmobonanza,%20vi%20tu%20p%C3%A1gina%20y%20me%20interes%C3%B3.%20Quiero%20saber%20m%C3%A1s%20sobre%20alquilar%20mi%20propiedad', '_blank');
+        }
+        
+        function trackWhatsAppClick() {
+            // Enviar evento a Google Analytics
+            gtag('event', 'click_whatsapp', {
+                'button_type': 'floating',
+                'page_title': document.title
+            });
+            
+            // Enviar evento a Meta Pixel
+            fbq('track', 'Lead', {
+                'content_name': 'WhatsApp Floating Button',
+                'content_category': 'Propietarios'
+            });
+        }
+        
+        // Tracking de scroll - detectar si el usuario scrollea
+        let hasScrolled = false;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300 && !hasScrolled) {
+                hasScrolled = true;
+                gtag('event', 'scroll', {
+                    'scroll_depth': 'engaged',
+                    'page_title': document.title
+                });
+                fbq('track', 'ViewContent', {
+                    'content_name': 'Engaged with Page',
+                    'content_category': 'Propietarios'
+                });
+            }
+        });
+        
+        // Tracking de tiempo en página
+        let startTime = Date.now();
+        window.addEventListener('beforeunload', function() {
+            let timeOnPage = (Date.now() - startTime) / 1000;
+            gtag('event', 'page_exit', {
+                'time_on_page': Math.round(timeOnPage),
+                'page_title': document.title
+            });
+        });
+        
+        // Tracking de visibilidad de secciones
+        const sections = ['hero-section', 'pain-section', 'benefits-section', 'testimonial-section', 'faq-section'];
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gtag('event', 'view_section', {
+                        'section_name': entry.target.id,
+                        'page_title': document.title
+                    });
+                    
+                    fbq('track', 'ViewContent', {
+                        'content_name': 'Viewed - ' + entry.target.id,
+                        'content_category': 'Propietarios'
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        sections.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+    </script>
+</body>
+</html>

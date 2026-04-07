@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobonanza - Para Inquilinos Exigentes</title>
+    
+    <!-- Google Tag Manager (Head) -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-338606133'); // GA4 ID de Inmobonanza
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-338606133"></script>
+    
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '256459520041913'); // Pixel ID de Inmobonanza
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=256459520041913&ev=PageView&noscript=1" /></noscript>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            font-size: 28px;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #000;
+        }
+        
+        .hero-sub {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        .problem {
+            background: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .problem-card {
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .problem-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .problem-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            padding: 80px 0;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .solution h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .solution p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #e0e0e0;
+        }
+        
+        .highlights {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .highlight-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .highlight-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .highlight-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .what-included {
+            background: #f5f5f5;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .included-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        
+        .included-item p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .process {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+        }
+        
+        .step-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        
+        .step h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .step p {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .properties {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .property-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .property-example {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        
+        .property-example h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        
+        .property-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 14px;
+        }
+        
+        .property-detail {
+            color: #666;
+        }
+        
+        .property-detail strong {
+            color: #000;
+        }
+        
+        .testimonials {
+            background: #f5f5f5;
+            padding: 60px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        
+        .testimonial-text {
+            font-size: 15px;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: #666;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .why-choose {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .why-card {
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+        }
+        
+        .why-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .why-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .cta-section {
+            background: #000;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+        }
+        
+        .cta-button-white {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button-white:hover {
+            background: #e0e0e0;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .problem-grid,
+            .highlights-grid,
+            .included-grid,
+            .process-steps,
+            .property-grid,
+            .testimonial-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button Flotante -->
+    <a href="https://wa.me/573192199629?text=Hola%20Inmobonanza,%20estoy%20buscando%20un%20apartamento%20amoblado%20en%20Cali.%20Quiero%20saber%20qu%C3%A9%20opciones%20tienen%20disponibles" class="whatsapp-button" id="whatsappBtn" onclick="trackWhatsAppClick()" title="Contactar por WhatsApp">
+        💬
+    </a>
+    
+    <header>
+        <div class="container">
+            <h1>INMOBONANZA</h1>
+            <p class="tagline">Donde los exigentes encuentran lo que buscaban</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="hero" id="hero-section">
+            <h2>Necesitas un lugar hoy.<br>Nosotros te lo damos hoy.</h2>
+            <p class="hero-sub">Acceso inmediato a apartamentos y casas amobladas de lujo en Cali. Sin plataformas. Sin esperas. Una persona que entiende exactamente lo que necesitas.</p>
+            <button class="cta-button" id="hero-cta" onclick="handleCTAClick('hero')">Ver propiedades disponibles</button>
+        </section>
+        
+        <section class="problem" id="problem-section">
+            <h2 class="section-title">El problema con las plataformas</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Airbnb te cuesta caro</h3>
+                    <p>Un apartamento amoblado de lujo termina siendo 30-50% más caro. Las comisiones, los costos ocultos, todo suma.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Nadie responde</h3>
+                    <p>¿Necesitas algo urgente? ¿Un problema con la propiedad? Los hosts responden cuando quieren, si es que responden.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Propiedades mediocres</h3>
+                    <p>Las fotos se ven bien. Llegas y: sucia, muebles rotos, wifi que no funciona. Sorpresas constantes.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Cero privacidad</h3>
+                    <p>Tu información está en una base de datos pública. Anuncios personalizados. Vigilancia algoritmica de Google. Incómodo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="solution">
+            <div class="container">
+                <h2>Nosotros somos diferente</h2>
+                <p>No usamos plataformas. Trabajamos cara a cara. Tú me llamas. Yo respondo. Necesitas algo hoy, lo tienes hoy.</p>
+                <p style="color: #fff; font-weight: 600;">Y cuesta menos que Airbnb porque no hay intermediarios.</p>
+            </div>
+        </section>
+        
+        <section class="highlights" id="highlights-section">
+            <h2 class="section-title">Lo que obtienes</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">⚡</div>
+                    <h3>Acceso inmediato</h3>
+                    <p>Hoy me llamas, hoy ves la propiedad. Si te gusta, te mudas este mes. Sin esperas.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">👤</div>
+                    <h3>Atención humana</h3>
+                    <p>Una persona que entiende Cali, que entiende lo que necesitas, que responde cuando la necesitas.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">💎</div>
+                    <h3>Calidad garantizada</h3>
+                    <p>Propiedades verificadas, amobladas con gusto, mantenidas perfectamente. Cero sorpresas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="what-included">
+            <h2 class="section-title">Qué está incluido</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <h3>✓ Amoblado completo</h3>
+                    <p>Todo: muebles, electrodomésticos, ropa de cama, cubiertos. Llegas y vives.</p>
+                </div>
+                <div class="included-item">
+                    <h3>✓ Servicios básicos</h3>
+                    <p>Agua, luz, internet de fibra. Todo pago, todo funciona.</p>
+                </div>
+                <div class="included-item">
+                    <h3>✓ Mantenimiento</h3>
+                    <p>Si algo se daña, nosotros lo arreglamos. Tú no haces nada.</p>
+                </div>
+                <div class="included-item">
+                    <h3>✓ Limpieza semanal</h3>
+                    <p>Alguien viene, deja el apartamento impecable. Tú solo vives.</p>
+                </div>
+                <div class="included-item">
+                    <h3>✓ Seguridad 24/7</h3>
+                    <p>Propiedades en zonas seguras, con sistemas de seguridad verificados.</p>
+                </div>
+                <div class="included-item">
+                    <h3>✓ Flexibility</h3>
+                    <p>Contrato mes a mes. Si necesitas cambiar de propiedad, lo hacemos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="process" id="process-section">
+            <h2 class="section-title">Cómo funciona</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Contacta</h4>
+                    <p>Llama o escribe. Dile qué necesitas: ubicación, presupuesto, tipo de propiedad.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Explora</h4>
+                    <p>Te mostramos opciones disponibles. Reales, verificadas, listas para entrega inmediata.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Decide</h4>
+                    <p>Si te gusta algo, firmamos el contrato ese día. Simple, sin trámites raros.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Vive</h4>
+                    <p>Te entregas la llave, te instalas. Nosotros resolvemos todo lo demás durante tu estancia.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="properties" id="properties-section">
+            <h2 class="section-title">Ejemplo de lo que tenemos</h2>
+            <div class="property-grid">
+                <div class="property-example">
+                    <h3>Apartamento moderno - Zona exclusiva</h3>
+                    <div class="property-details">
+                        <div class="property-detail"><strong>2 habitaciones</strong>, 2 baños</div>
+                        <div class="property-detail"><strong>100 m²</strong> completamente amoblado</div>
+                        <div class="property-detail"><strong>$6.000.000</strong> mes</div>
+                        <div class="property-detail"><strong>Piscina</strong>, gimnasio, portería 24/7</div>
+                        <div class="property-detail"><strong>Disponible:</strong> Hoy</div>
+                    </div>
+                </div>
+                <div class="property-example">
+                    <h3>Casa de lujo - Privacidad total</h3>
+                    <div class="property-details">
+                        <div class="property-detail"><strong>3 habitaciones</strong>, 3 baños</div>
+                        <div class="property-detail"><strong>150 m²</strong>, patio privado</div>
+                        <div class="property-detail"><strong>$7.500.000</strong> mes</div>
+                        <div class="property-detail"><strong>Parqueo privado</strong>, seguridad perimetral</div>
+                        <div class="property-detail"><strong>Disponible:</strong> Inmediata</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials" id="testimonials-section">
+            <h2 class="section-title">Quiénes confían en nosotros</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Me mudé a Cali por trabajo. Necesitaba algo rápido y de calidad. Llamé a Inmobonanza en la mañana, en la tarde ya estaba visitando propiedades, y a la semana siguiente estaba instalado. Fue increíblemente fácil."</p>
+                    <p class="testimonial-author">Ejecutivo, empresa multinacional</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Iba a usar Airbnb pero alguien me recomendó Inmobonanza. Menos caro, mejor atención, mejor propiedad. No entiendo por qué alguien seguiría con plataformas cuando existe esto."</p>
+                    <p class="testimonial-author">Profesional independiente, reubicado</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="why-choose" id="why-choose-section">
+            <h2 class="section-title">¿Por qué nosotros?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Somos de Cali</h3>
+                    <p>Conocemos la ciudad, las zonas, qué funciona y qué no. No somos un algoritmo.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Trabajamos con VIP</h3>
+                    <p>Executivos, deportistas, empresarios. Gente con estándares altos como los tuyos.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Disponibilidad real</h3>
+                    <p>Responden personas. No chatbots. En el horario que lo necesites.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Propiedades curadas</h3>
+                    <p>No es un catálogo masivo. Cada propiedad es seleccionada personalmente.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Precio honesto</h3>
+                    <p>Lo que ves es lo que pagas. Sin sorpresas, sin tarifas ocultas.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Privacidad garantizada</h3>
+                    <p>Tu información no está en una base de datos pública. Discreción total.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="container">
+                <h2>¿Listo para algo mejor?</h2>
+                <p>Contáctanos ahora. Una conversación rápida que podría cambiar tu forma de vivir.</p>
+                <button class="cta-button-white" id="final-cta" onclick="handleCTAClick('final')">Contactar ahora</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Inmobonanza. Propiedades de lujo para gente exigente.</p>
+    </footer>
+    
+    <script>
+        // Tracking de eventos con Google Analytics y Meta Pixel
+        
+        function handleCTAClick(location) {
+            // Enviar evento a Google Analytics
+            gtag('event', 'click_cta', {
+                'cta_location': location,
+                'page_title': document.title
+            });
+            
+            // Enviar evento a Meta Pixel
+            fbq('track', 'Lead', {
+                'content_name': 'CTA Click - ' + location,
+                'content_category': 'Inquilinos'
+            });
+            
+            // Abrir WhatsApp
+            window.open('https://wa.me/573192199629?text=Hola%20Inmobonanza,%20estoy%20buscando%20un%20apartamento%20amoblado%20en%20Cali.%20Quiero%20saber%20qu%C3%A9%20opciones%20tienen%20disponibles', '_blank');
+        }
+        
+        function trackWhatsAppClick() {
+            // Enviar evento a Google Analytics
+            gtag('event', 'click_whatsapp', {
+                'button_type': 'floating',
+                'page_title': document.title
+            });
+            
+            // Enviar evento a Meta Pixel
+            fbq('track', 'Lead', {
+                'content_name': 'WhatsApp Floating Button',
+                'content_category': 'Inquilinos'
+            });
+        }
+        
+        // Tracking de scroll - detectar si el usuario scrollea
+        let hasScrolled = false;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300 && !hasScrolled) {
+                hasScrolled = true;
+                gtag('event', 'scroll', {
+                    'scroll_depth': 'engaged',
+                    'page_title': document.title
+                });
+                fbq('track', 'ViewContent', {
+                    'content_name': 'Engaged with Page',
+                    'content_category': 'Inquilinos'
+                });
+            }
+        });
+        
+        // Tracking de tiempo en página
+        let startTime = Date.now();
+        window.addEventListener('beforeunload', function() {
+            let timeOnPage = (Date.now() - startTime) / 1000;
+            gtag('event', 'page_exit', {
+                'time_on_page': Math.round(timeOnPage),
+                'page_title': document.title
+            });
+        });
+        
+        // Tracking de visibilidad de secciones
+        const sections = ['hero-section', 'problem-section', 'highlights-section', 'process-section', 'properties-section', 'testimonials-section', 'why-choose-section'];
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gtag('event', 'view_section', {
+                        'section_name': entry.target.id,
+                        'page_title': document.title
+                    });
+                    
+                    fbq('track', 'ViewContent', {
+                        'content_name': 'Viewed - ' + entry.target.id,
+                        'content_category': 'Inquilinos'
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        sections.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+    </script>
+</body>
+</html>
